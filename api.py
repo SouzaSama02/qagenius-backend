@@ -44,7 +44,7 @@ def generate_response():
 
         result = model.generate_content(prompt)
         response_text = result.text
-git
+
         return jsonify({"response": response_text, "success": True})
     except Exception as e:
         print("Erro ao enviar resposta:", e)
