@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Carregar dados do prompt
-prompt_file_path = "../src/assets/prompt.json"
+prompt_file_path = "./prompt.json"
 if os.path.exists(prompt_file_path):
     with open(prompt_file_path, "r") as file:
         prompt_data = json.load(file)
