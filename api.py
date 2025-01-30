@@ -35,12 +35,12 @@ def generate_response():
         data = request.get_json()
         input_text = data.get("inputText", "")
 
-        prompt = f"""
-        {prompt_data['instruction']}
-        {'\n'.join([f"{key}: {value}" for key, value in prompt_data['details'].items()])}
-        Informação adicional: {input_text}
-        Formato esperado: {prompt_data['format']}
-        """
+        prompt = (
+                prompt_data["instruction"] + "\n" +
+                "\n".join([f"{key}: {value}" for key, value in prompt_data["details"].items()]) + "\n" +
+                f"Informação adicional: {input_text}\n" +
+                f"Formato esperado: {prompt_data['format']}"
+        )
 
         result = model.generate_content(prompt)
         response_text = result.text
