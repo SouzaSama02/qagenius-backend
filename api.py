@@ -10,14 +10,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Carregar dados do prompt
-prompt_file_path = "./prompt.json"
+prompt_file_path = "src/prompt/prompt.json"
 if os.path.exists(prompt_file_path):
     with open(prompt_file_path, "r") as file:
         prompt_data = json.load(file)
 else:
     prompt_data = {"instruction": "", "details": {}, "format": ""}
 
-# Configurar API
 app = Flask(__name__)
 CORS(app)
 
