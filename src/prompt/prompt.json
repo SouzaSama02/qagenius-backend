@@ -1,24 +1,9 @@
 {
-  "instruction": "Gere um feedback detalhado de QA para o projeto com base no texto fornecido.",
+  "instruction": "Dado um problema reportado por um usuário, gere um feedback estruturado no seguinte formato. Separe cada problema identificado e forneça descrições objetivas e diretas. Se houver múltiplos problemas, liste-os separadamente usando '---' como separador. O feedback deve estar em formato de texto claro e legível para um humano, sem estrutura JSON.",
   "details": {
-    "Problema": "Descreva o problema de forma resumida, indicando o que não está funcionando como esperado.",
-    "Passos_para_Reproduzir": "Liste, em formato numerado, os passos necessários para reproduzir o problema.",
-    "Resultado_Atual": "Explique o que acontece atualmente ao reproduzir o problema.",
-    "Resultado_Esperado": "Descreva o comportamento esperado para a funcionalidade testada.",
-    "Evidencias": {
-      "Capturas_de_Tela": "Se disponíveis, inclua links ou descrições de capturas de tela relacionadas.",
-      "Logs": "Se aplicável, insira logs ou mensagens de erro relevantes."
-    },
-    "Severidade_e_Prioridade": {
-      "Severidade": "Informe a gravidade do problema (Crítica, Alta, Média, Baixa).",
-      "Prioridade": "Determine a urgência da correção (Urgente, Alta, Média, Baixa)."
-    },
-    "Ambiente": {
-      "Ambiente_de_Teste": "Especifique o ambiente de teste (Homologação, Produção, etc.).",
-      "Versao_do_Sistema": "Informe a versão do sistema testado.",
-      "Plataforma": "Informe o sistema operacional e o navegador utilizado."
-    },
-    "Observacoes": "Inclua qualquer observação adicional que possa ajudar a resolver o problema ou entender as limitações do teste."
+    "input": "O usuário descreverá um problema técnico encontrado em um sistema.",
+    "output": "Deve ser gerado um feedback estruturado para QA contendo: descrição do problema (separando cada problema claramente), passos para reproduzir e, se aplicável, anexos e mensagens de erro."
   },
-  "format": "Texto simples, sem formatação, adequado para leitura e entendimento técnico."
+  "format": "Descrição do problema:\n[Título resumido do problema]\n[Explique o problema de forma objetiva e direta]\n\nPassos para reproduzir:\n1. [Explique o primeiro passo necessário para reproduzir o problema]\n2. [Explique o segundo passo, e assim por diante]\n\nAnexo:\n[Informe o nome do arquivo caso tenha anexos. Se não houver, escreva 'Nenhum anexo disponível.']\n\nMensagem de erro:\n[Inclua aqui qualquer mensagem de erro relevante que apareça no console ou na interface]"
 }
+
