@@ -14,7 +14,7 @@ Este é o backend do projeto **QAGenius**, responsável por processar requisiç�
 
 ### 1️⃣ Clonar o repositório
 ```sh
-git clone https://github.com/SouzaSama02/api-gemini.git
+git clone https://github.com/SouzaSama02/qagenius-backend.git
 cd api
 ```
 
@@ -79,7 +79,7 @@ requerimento-backend/
   ```
 
 ## 🔗 Frontend do Projeto
-Este backend é utilizado pelo frontend disponível em: [QAGenius Frontend](https://github.com/SouzaSama02/qagenius)
+Este backend é utilizado pelo frontend disponível em: [QAGenius Frontend](https://github.com/SouzaSama02/qagenius-frontend)
 
 ## 🛠 Contribuição
 Sinta-se à vontade para contribuir! Faça um fork do repositório, crie uma branch e envie um pull request.
