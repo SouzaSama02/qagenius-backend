@@ -41,6 +41,13 @@ def generate_response():
                 f"Formato esperado: {prompt_data['format']}"
         )
 
+        generation_config = {
+            "temperature": 0.5,
+            "max_tokens": 500,
+            "top_p": 1.0,
+            "top_k": 40
+        }
+
         result = model.generate_content(prompt)
         response_text = result.text
 
