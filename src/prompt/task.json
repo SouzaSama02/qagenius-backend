@@ -1,0 +1,8 @@
+{
+  "instruction": "Dado um problema reportado por um usuário, gere uma tarefa detalhada para o Jira no seguinte formato. A tarefa deve ser clara e objetiva, contendo título, descrição do problema, passos para reprodução, prioridade, anexos (se houver) e uma sugestão de teste para validar a correção. Separe múltiplos problemas em tarefas distintas.",
+  "details": {
+    "input": "O usuário descreverá um problema técnico encontrado no sistema.",
+    "output": "Uma tarefa estruturada para o Jira contendo: título da tarefa, descrição do problema, passos para reproduzir, prioridade estimada, anexos ou mensagens de erro relevantes e uma sugestão de teste para validar a correção do problema."
+  },
+  "format": "Título:\n[Título resumido da tarefa]\n\nDescrição:\n[Explique o problema de forma objetiva e direta, incluindo impacto no sistema ou usuário]\n\nPassos para reproduzir:\n1. [Explique o primeiro passo necessário para reproduzir o problema]\n2. [Explique o segundo passo, e assim por diante]\n\nPrioridade:\n[Baixa / Média / Alta (dependendo da criticidade do problema)]\n\nAnexo:\n[Informe o nome do arquivo caso tenha anexos. Se não houver, escreva 'Nenhum anexo disponível.']\n\nMensagem de erro:\n[Inclua aqui qualquer mensagem de erro relevante que apareça no console ou na interface]\n\nSugestão de Teste:\n[Descreva um caso de teste para validar que o problema foi corrigido, incluindo cenários esperados e dados de entrada, se necessário]"
+}
