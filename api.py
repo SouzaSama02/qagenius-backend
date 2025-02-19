@@ -16,7 +16,6 @@ if not key:
 
 genai.configure(api_key=key)
 model = genai.GenerativeModel("gemini-1.5-flash")
-
 @app.route("/prompt", methods=["POST"])
 def generate_response():
     try:
