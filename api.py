@@ -3,9 +3,19 @@ import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import google.generativeai as genai
+
+# Carregar variáveis de ambiente
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Carregar dados do prompt
+prompt_file_path = "src/prompt/prompt.json"
+if os.path.exists(prompt_file_path):
+    with open(prompt_file_path, "r") as file:
+        prompt_data = json.load(file)
+else:
+    prompt_data = {"instruction": "", "details": {}, "format": ""}
 
 app = Flask(__name__)
 CORS(app)
@@ -16,20 +26,12 @@ if not key:
 
 genai.configure(api_key=key)
 model = genai.GenerativeModel("gemini-1.5-flash")
+
 @app.route("/prompt", methods=["POST"])
 def generate_response():
     try:
         data = request.get_json()
         input_text = data.get("inputText", "")
-        typefile = data.get('typeFile', "")
-
-        prompt_file_path = ("src/prompt/{0}.json".format(typefile))
-
-        if os.path.exists(prompt_file_path):
-            with open(prompt_file_path, "r") as file:
-                prompt_data = json.load(file)
-        else:
-            prompt_data = {"instruction": "", "details": {}, "format": ""}
 
         prompt = (
                 prompt_data["instruction"] + "\n" +
