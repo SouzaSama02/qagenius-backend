@@ -1,9 +1,15 @@
 {
-  "instruction": "Dado um problema reportado por um usuário, gere um feedback estruturado no seguinte formato. Separe cada problema identificado e forneça descrições objetivas e diretas. Se houver múltiplos problemas, liste-os separadamente usando '---' como separador. O feedback deve estar em formato de texto claro e legível para um humano, sem estrutura JSON.",
+  "instruction": "Dado um problema reportado por um usuário dentro da plataforma Huggy (https://www.huggy.io/pt-br), gere um feedback estruturado no seguinte formato. Separe cada problema identificado e forneça descrições objetivas e diretas. Se houver múltiplos problemas, liste-os separadamente usando '---' como separador. O feedback deve estar em formato de texto claro e legível para um humano, sem estrutura JSON. O feedback deve ser baseado APENAS nas informações fornecidas pelo usuário, evitando inferências não mencionadas explicitamente.",
   "details": {
-    "input": "O usuário descreverá um problema técnico encontrado em um sistema.",
-    "output": "Deve ser gerado um feedback estruturado para QA contendo: descrição do problema (separando cada problema claramente), passos para reproduzir e, se aplicável, anexos e mensagens de erro."
+    "input": "O usuário descreverá um problema técnico encontrado na Huggy, incluindo possíveis falhas na plataforma ou na API (https://developers.huggy.io/).",
+    "output": "Deve ser gerado um feedback estruturado para QA contendo: descrição do problema (separando cada problema claramente), passos para reproduzir e, se aplicável, anexos e mensagens de erro. Se o erro envolver a API, referencie a documentação relevante.",
+    "context": "A Huggy é uma plataforma de atendimento digital omnichannel que permite automação de conversas, integração com diversos canais e uso de APIs para personalização. A API possibilita operações como gestão de atendimentos, automação de bots e integração com CRMs. Erros podem envolver falhas na interface, mal funcionamento de webhooks, respostas inconsistentes da API ou problemas na configuração de canais.",
+    "examples": [
+      {
+        "input": "O webhook de mensagens não está funcionando para o WhatsApp.",
+        "output": "Descrição do problema:\n[Webhook de mensagens do WhatsApp não está funcionando]\nAs mensagens recebidas no WhatsApp não estão acionando o webhook configurado na API da Huggy.\n\nPassos para reproduzir:\n1. Acesse a configuração de webhooks na plataforma Huggy.\n2. Verifique que o webhook de mensagens está ativo para o canal WhatsApp.\n3. Envie uma mensagem de teste para o número vinculado.\n4. Nenhuma solicitação HTTP é registrada no endpoint configurado.\n\nAnexo:\nNenhum anexo disponível.\n\nMensagem de erro:\nNenhuma mensagem de erro visível na interface. No log da API, a requisição não foi registrada."
+      }
+    ]
   },
-  "format": "Descrição do problema:\n[Título resumido do problema]\n[Explique o problema de forma objetiva e direta]\n\nPassos para reproduzir:\n1. [Explique o primeiro passo necessário para reproduzir o problema]\n2. [Explique o segundo passo, e assim por diante]\n\nAnexo:\n[Informe o nome do arquivo caso tenha anexos. Se não houver, escreva 'Nenhum anexo disponível.']\n\nMensagem de erro:\n[Inclua aqui qualquer mensagem de erro relevante que apareça no console ou na interface]"
+  "format": "Descrição do problema:\n[Título resumido do problema]\n[Explique o problema de forma objetiva e direta]\n\nPassos para reproduzir:\n1. [Explique o primeiro passo necessário para reproduzir o problema]\n2. [Explique o segundo passo, e assim por diante]\n\nAnexo:\n[Informe o nome do arquivo caso tenha anexos. Se não houver, escreva 'Nenhum anexo disponível.']\n\nMensagem de erro:\n[Inclua aqui qualquer mensagem de erro relevante que apareça no console, logs da API ou na interface]"
 }
-
